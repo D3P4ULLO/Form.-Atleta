@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<h2>Formularios em HTML</h2>  
+<!-- 1 - Formulario -->
+<!-- 2 - Atributos formulario: Action e method -->
+<form action="register.php" method="POST">
+<div>
+<label>Nome:</label>
+<input type="text" />
+</div>
+<!-- 3 - Atibuto Name: Configura/da nome para os inputs -->
+<div>
+<!-- 4 - Atributo label: kinka input, valor=name, -->
+
+<label for="age">Idade:</label>
+<input type="text" name="age">
+</div>
+<!-- 6 - Select:  -->
+<div>
+<label for="job">Selecione sua profissão</label>
+<select name="job">
+<option value="programador">Programador</option>
+<option value="publicitario">Publicitarrio</option>
+<option value="contador">Contador</option>
+</select>
+</div>
+<!-- 7 - Atributo selected: fica fixado uma opção direto -->
+<div>
+<label for="contrato">Você leu os termos descritos no contrato?</label>
+<select name="contrato">
+    <option value="sim">Sim</option>
+    <option value="não" selected>Não</option>    
+</select>
+</div>
+<div>
+<!-- 8 - MULTIPLA SELEÇÕES: uma tag que permit mais de uma option, colocoar atributo mutiple na tag select -->
+<label for="itens">Selecione os itens que deseja</label>
+<select name="itens" multiple>
+<option value="Trava">Trava</option>
+<option value="Vidro">Vidro</option>
+<option value="Ar">Ar</option>
+<option value="multimidia">Multimidia</option>
+<option value="rodas de liga">Rodas de liga</option>
+<option value="Banco de couro">Banco de couro</option>
+</select>
+</div>
+<!-- 9 - Text Area: area pra texto maior -->
+<div>
+    <label for="Coment">Deixe aqui seu comentario</label>
+    <textarea name="coment"></textarea>
+</div>
+<!-- 10 - Fildsete e legend: Fildset agrupa, legend descreve agrupados, usamos para conectar dois ou mais unputs -->
+<div>
+    <fieldset>
+        <legend>Preencha as suas informações:</legend>
+        <label for="fisrtname">Nome</label>
+        <input type="text" name="fisrtname">
+        <label for="lastname">Sobrmenome</label>
+        <input type="text" name="lastname">
+    </fieldset>
+</div>
+<!-- 11 - Datalist - autocompleta, seleciona por meio de lista, linkadas por um atrobuto list -->
+<div>
+    <label for="sabor">Escolha o sabor:</label>
+    <input type="text" list="sabores" name="sabor">
+
+    <datalist id="sabores">
+        <option value="original"></option>
+        <option value="manga"></option>
+        <option value="laranja"></option>
+        <option value="sem açucar"></option>
+        <option value="morango"></option>
+        <option value="creja"></option>
+    </datalist>
+</div>
+<!-- 12 - senha: Utiliza a tag input com atributo type password,  -->
+<div>
+    <label for="password">Digite sua senha:</label>
+    <input type="password" name="password">
+</div>
+<!-- 14- inputradio: seleciona uma opçao dentre varias, -->
+<div>
+    <label for="modelo_carro">Escolha o modelo de carro:</label>
+    <div class="radio">
+        <input type="radio" value="bmw" name="modelo_carro">
+        <label for="bmw">BMW</label>
+    </div>
+    <div class="radio">
+        <input type="radio" value="Ferrari" name="modelo_carro">
+        <label for="Ferrari">Ferrari</label>
+    </div>
+    <div class="radio">
+        <input type="radio" value="Porsche" name="modelo_carro">
+        <label for="Porsche">Porsche</label>
+    </div>
+</div>
+<!-- 15 - Checkbox: Sinilar ao radio, uma ou mais opção,  -->
+<div>
+    <label for="opicionais">Opicionais do carro:</label>
+    <div class="radio">
+        <input type="checkbox" name="opcionais[]" value="big_tires">
+        <label for="big_tires">Pneus grandes</label>
+    </div>
+    <div class="radio">
+        <input type="checkbox" name="opcionais[]" value="ar_cond">
+        <label for="ar_cond">Ar Condicionado</label>
+    </div>
+    <div class="radio">
+        <input type="checkbox" name="opcionais[]" value="multimidia">
+        <label for="multimidia">Central de Multmidia</label>
+    </div>
+</div>
+<!-- 16 - Data: input date, seleciona uma data, calendario auxiliar, podemos digitar -->
+<div>
+<label for="aniversary">Data de nascimento:</label>
+<input type="date" name="aniversary">
+</div>
+<!-- 17 - Arquivos: type igual a file, envia p/servidor -->
+<div>
+    <label for="arquiv">Insira a sua imagem:</label>
+    <input type="file" name="arquiv">
+</div>
+<!-- 18 - Numeros: type number, input só aceita digitos (possui setas, permite alterar através de cliques) -->
+<div>
+    <label for="number">Insira sua idade:</label>
+    <input type="number" name="number">
+</div>
+<!-- 19 - e-mail: Similiar de texto, quando enviar o form ele tem uma validação, que checa se é um texto padão de e_mail -->
+<div>
+    <label for="email">Digite seu e-mail:</label>
+    <input type="email" name="email">
+</div>
+<!-- 20 - value: define valor do input alvo, como se tivesse preenchido algo, utilizado quando tem valor padrão -->
+<div>
+    <label for="value">Digite qualquer valor:</label>
+    <input type="value" value="Este é meu valor:" name="value">
+</div>
+<!-- 21 - Disabled: bloqueia um input, não podemos digitar nele, ultil quando queremos que o usuario nao digite em um input -->
+<div>
+    <p>Tente mudar o valor:</p>
+    <input type="text" value="Não precisa preencher"disabled>
+</div>
+<!-- 22 - Placeholder: dicas para usuarios, exibido no input -->
+<div>
+    <label for="current_job">Digite sua profissão:</label>
+    <input type="text" name="current_job" placeholder="Com o que trabalha no momento?">
+</div>
+<!-- 24 - Required: força preenchimento de um campo, recebemos alerta da pagina se não preenchemos esse campo, validação do html -->
+<div>
+    <label for="year">Digite ano que nasceu:</label>
+    <input type="text" placeholder="Digite ano do seu nascimento" required>
+</div>
+<!-- 13 - Reiniciando form: feito atraves de input do tipo reset, botao que limpa o form -->
+    <input type="reset" name="limpar"/>
+<!-- 5 - Enviando form: pode ser atraves de um botão submit -->
+<input type="submit" value="Enviar"/>
+</form>
+</body>
+</html>
